@@ -150,7 +150,7 @@ Acesse `https://localhost:7188/swagger/index.html` para visualizar e testar todo
 
 ## 👨‍💻 Autor
 
-**Vinícius Breda Silva**
-**David Augusto de Andrade Ribeiro**
-**Lucas Dantas dos Santos**
+**Vinícius Breda Silva**, 
+**David Augusto de Andrade Ribeiro**, 
+**Lucas Dantas dos Santos** e 
 **Nasser Souza Almeida**
