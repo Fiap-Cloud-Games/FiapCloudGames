@@ -60,5 +60,7 @@ namespace FCG.Domain.Entities
             return new string(chars);
         }
 
+        public void PromoverAdmin() => IsAdmin = true;
+
     }
 }
