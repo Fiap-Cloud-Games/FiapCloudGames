@@ -42,7 +42,6 @@ public class UsuarioServiceTests
         Assert.True(resultado.Notifications.Any());
         Assert.Contains("O usuário já existe no banco de dados!", resultado.Notifications);
         
-        // Garante que não houve commit
         mockUow.Verify(u => u.Commit(), Times.Never);
     }
 }
