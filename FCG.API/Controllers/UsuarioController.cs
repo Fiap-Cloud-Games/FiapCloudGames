@@ -16,9 +16,16 @@ namespace FCG.API.Controllers
             _usuarioService = usuarioService;
         }
 
-        [Authorize(Roles = "Admin")]
         [HttpPost("Incluir")]
         public async Task<IActionResult> Incluir(UsuarioDTO usuarioDTO)
+        {
+            var result = await _usuarioService.Incluir(usuarioDTO);
+            return CreateIActionResult(result);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpPut("Alterar")]
+        public async Task<IActionResult> Alterar(UsuarioDTO usuarioDTO)
         {
             #region Validação Adicional Usuário Admin
             var idUsuarioLogado = int.Parse(User.Claims.FirstOrDefault(c => c.Type == "id")?.Value);
@@ -28,14 +35,6 @@ namespace FCG.API.Controllers
                 return Unauthorized("Acesso negado! Usuário não autorizado a realizar exclusão.");
             #endregion
 
-            var result = await _usuarioService.Incluir(usuarioDTO);
-            return CreateIActionResult(result);
-        }
-
-        [Authorize(Roles = "Admin")]
-        [HttpPut("Alterar")]
-        public async Task<IActionResult> Alterar(UsuarioDTO usuarioDTO)
-        {
             var result = await _usuarioService.Alterar(usuarioDTO);
             return CreateIActionResult(result);
         }
