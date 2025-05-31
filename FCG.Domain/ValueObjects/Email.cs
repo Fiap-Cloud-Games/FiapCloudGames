@@ -14,8 +14,8 @@ namespace FCG.Domain.ValueObjects
             this.EmailAddress = endereco;
 
             if (!string.IsNullOrEmpty(this.EmailAddress) && !ValidarFormatoEmail())
-                throw new DomainExceptionValidation("Email Inválido");
-            
+                AddNotification("Email", "O formato do Email é inválido");
+
         }
 
         public override string ToString()

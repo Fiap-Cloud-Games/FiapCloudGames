@@ -1,13 +1,14 @@
 ﻿using AutoMapper;
-using System.Text;
 using FCG.API.Models;
-using FCG.Domain.Entities;
 using FCG.Application.DTOs;
+using FCG.Application.Interfaces;
+using FCG.Domain.Entities;
 using FCG.Domain.Interfaces;
 using FCG.Domain.Notifications;
-using FCG.Application.Interfaces;
-using System.Security.Cryptography;
+using FCG.Domain.ValueObjects;
 using Microsoft.Extensions.Logging;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace FCG.Application.Services
 {
@@ -44,6 +45,12 @@ namespace FCG.Application.Services
                 }
 
                 var usuario = _mapper.Map<Usuario>(usuarioDTO);
+
+                if (usuario.EmailUsuario.Notifications.Count > 0)
+                {
+                    resultNotifications.Notifications.AddRange(usuario.EmailUsuario.Notifications.Select(n => n.Message));
+                    return resultNotifications;
+                }
 
                 if (usuarioDTO.Password != null)
                 {
