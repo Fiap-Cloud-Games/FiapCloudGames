@@ -14,10 +14,32 @@ Desenvolver uma API para:
 - Fornecer base sólida para futuras fases do projeto, como gerenciamento de jogos e servidores para partidas Online
 
 ---
+## 🧰 Instruções de Uso
+
+### ✅ Pré-requisitos
+Certifique-se de ter os seguintes softwares instalados na máquina:
+
+- [.NET SDK 8.0](https://dotnet.microsoft.com/en-us/download)
+- [SQL Server](https://www.microsoft.com/pt-br/sql-server/)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/pt-br/)
+  
+---
+### 🚀 Como rodar a API localmente
+
+1. **Clone o repositório**
+2. **Abra o projeto com o Visual Studio 2022**
+3. **Configure a conexão com o banco de dados em: appsettings.Development.json**
+4. **Execute as migrations caso o banco de dados não exista com o comando: dotnet ef database update**
+5. **Defina o projeto FCG.API como Projeto de Inicialização**
+6. **Execute a aplicação pressionando F5 ou execute o comando: dotnet run --project FCG.API**
+7. **Após iniciar a aplicação, acesse o Swagger para visualizar e testar os endpoints: https://localhost:7188/swagger/index.html**
+8. **Para executar o projeto de testes clique com o botão direito em FCG.Tests e Executar Testes**
+
+---
 
 ## 📚 Tecnologias Utilizadas
 
-- 🔹 [.NET 8](https://dotnet.microsoft.com/en-us/) – Framework principal utilizado para construção da API REST, com alto desempenho, segurança e escalabilidade.
+- 🔹 **.NET 8** – Framework principal utilizado para construção da API REST, com alto desempenho, segurança e escalabilidade.
 - 🔹 **Entity Framework Core** – ORM para mapeamento objeto-relacional e controle de persistência de dados via Migrations.
 - 🔹 **SQL Server** – Banco de dados relacional utilizado para armazenar os dados da aplicação com consistência e integridade.
 - 🔹 **AutoMapper** – Biblioteca para mapeamento automático entre entidades de domínio, DTOs e ViewModels, promovendo desacoplamento entre camadas.
@@ -106,47 +128,18 @@ FCG.Infra.Ioc
 
 ## 🧪 Testes e Qualidade
 
-A arquitetura do projeto foi desenhada para facilitar a aplicação de **Testes Unitários** e **Desenvolvimento Orientado a Comportamento (BDD)**. 
+A arquitetura do projeto foi desenhada para facilitar a aplicação de **Testes Unitários** e **Desenvolvimento Orientado a Testes (TDD)**. 
 
-### ✅ Testes Unitários (xUnit)
-
-O objetivo é validar as principais regras de negócio críticas da aplicação, incluindo:
+### ✅ Testes Unitários e TDD com xUnit
+O objetivo é validar as principais regras de negócio críticas da aplicação e, foram aplicadas para as seguintes regras:
 
 - 🔐 **Validação de senha segura**:
-  - Deve aceitar senhas com mínimo de 8 caracteres, contendo letras maiúsculas, minúsculas, números e caracteres especiais.
-  - Deve rejeitar senhas fracas ou em branco.
 - 👤 **Criação de usuários**:
-  - Deve permitir criação de usuários válidos.
-  - Deve impedir duplicidade de e-mails.
 - 🔑 **Permissões de acesso**:
-  - Deve reconhecer corretamente usuários com perfil `Admin` e `Usuário`.
-  - Deve restringir ações administrativas apenas a usuários com role `Admin`.
-- 📭 **Recuperação de senha**:
-  - Deve gerar nova senha temporária segura.
-  - Deve alterar corretamente o hash/salt da senha no banco.
-
-### ✅ BDD (Behavior-Driven Development)
-
-Aplicação de BDD para representar claramente o comportamento do sistema a partir da perspectiva do usuário. 
-Algumas histórias que podem ser testadas com ferramentas como **SpecFlow** ou **BDDfy**:
-
-- **Cenário: Recuperação de senha**
-  - Dado que o usuário esqueceu sua senha
-  - Quando ele solicitar a recuperação
-  - Então uma nova senha segura deve ser gerada e enviada
-
-- **Cenário: Criação de usuário admin**
-  - Dado que um usuário com permissão de administrador está logado
-  - Quando ele cadastrar um novo usuário
-  - Então o novo usuário deve ser salvo com as permissões especificadas
-
-📌 O projeto já está preparado com **injeção de dependência**, **camadas desacopladas** e **serviços testáveis**, o que facilita a cobertura futura com testes automatizados.
----
-
+  
 ## 📄 Documentação da API
 
 Acesse `https://localhost:7188/swagger/index.html` para visualizar e testar todos os endpoints disponíveis via Swagger.
-
 
 ## 👨‍💻 Autor
 
