@@ -39,18 +39,18 @@ Certifique-se de ter os seguintes softwares instalados na máquina:
 
 ## 📚 Tecnologias Utilizadas
 
-- 🔹 **.NET 8** – Framework principal utilizado para construção da API REST, com alto desempenho, segurança e escalabilidade.
-- 🔹 **Entity Framework Core** – ORM para mapeamento objeto-relacional e controle de persistência de dados via Migrations.
-- 🔹 **SQL Server** – Banco de dados relacional utilizado para armazenar os dados da aplicação com consistência e integridade.
-- 🔹 **AutoMapper** – Biblioteca para mapeamento automático entre entidades de domínio, DTOs e ViewModels, promovendo desacoplamento entre camadas.
-- 🔹 **JWT (JSON Web Token)** – Mecanismo de autenticação e autorização segura, com tokens assinados e expiração controlada.
-- 🔹 **Swagger (OpenAPI)** – Ferramenta para documentação automática e interativa dos endpoints da API, com suporte a autenticação via Bearer Token.
-- 🔹 **xUnit** – Framework de testes utilizado para validar as regras de negócio por meio de testes unitários.
-- 🔹 **Clean Architecture + Domain-Driven Design (DDD)** – Padrões arquiteturais que garantem separação de responsabilidades, modularidade, coesão e fácil manutenção do código.
-- 🔹 **Injeção de Dependência (IoC)** – Implementada com `IServiceCollection` para promover baixo acoplamento entre componentes e facilitar a testabilidade.
-- 🔹 **Middleware de tratamento de erros** – Captura global de exceções com retorno estruturado e integração com logs.
-- 🔹 **Paginação customizada** – Implementada para controle de grandes volumes de dados em endpoints de listagem com filtros dinâmicos.
-- 🔹 **Logs estruturados com ILogger** – Para rastreabilidade de processos, tratamento de falhas e suporte à observabilidade.
+- **.NET 8** – Framework principal utilizado para construção da API REST, com alto desempenho, segurança e escalabilidade.
+- **Entity Framework Core** – ORM para mapeamento objeto-relacional e controle de persistência de dados via Migrations.
+- **SQL Server** – Banco de dados relacional utilizado para armazenar os dados da aplicação com consistência e integridade.
+- **AutoMapper** – Biblioteca para mapeamento automático entre entidades de domínio, DTOs e ViewModels, promovendo desacoplamento entre camadas.
+- **JWT (JSON Web Token)** – Mecanismo de autenticação e autorização segura, com tokens assinados e expiração controlada.
+- **Swagger (OpenAPI)** – Ferramenta para documentação automática e interativa dos endpoints da API, com suporte a autenticação via Bearer Token.
+- **xUnit** – Framework de testes utilizado para validar as regras de negócio por meio de testes unitários.
+- **Clean Architecture + Domain-Driven Design (DDD)** – Padrões arquiteturais que garantem separação de responsabilidades, modularidade, coesão e fácil manutenção do código.
+- **Injeção de Dependência (IoC)** – Implementada com `IServiceCollection` para promover baixo acoplamento entre componentes e facilitar a testabilidade.
+- **Middleware de tratamento de erros** – Captura global de exceções com retorno estruturado e integração com logs.
+- **Paginação customizada** – Implementada para controle de grandes volumes de dados em endpoints de listagem com filtros dinâmicos.
+- **Logs estruturados com ILogger** – Para rastreabilidade de processos, tratamento de falhas e suporte à observabilidade.
 
 ---
 
